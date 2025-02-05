@@ -21,22 +21,6 @@ class CatsViewModel(
     val catsLiveData: LiveData<Result> = _catsLiveData
     private val disposable = CompositeDisposable()
 
-    /*init {
-        disposable.add(
-            catsService.getCatFact()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                    { fact -> _catsLiveData.value = Success(fact) },
-                    { error ->
-                        _catsLiveData.value =
-                            Error(error.message ?: context.getString(R.string.default_error_text))
-                    }
-                )
-        )
-    }
-*/
-
     override fun onCleared() {
         super.onCleared()
         catsService
